@@ -1,0 +1,101 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+.page-toys {
+  margin: auto;
+  background-image: url("../assets/bg.jpg");
+  color: #fff;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.blur {
+  background: rgba(22, 41, 41, 0.5);
+  backdrop-filter: blur(3px);
+  height: 100%;
+}
+.controls {
+  max-width: 1600px;
+  margin: auto;
+}
+.card-img {
+  width: 90px;
+  height: 110px;
+  object-fit: contain;
+}
+.filter {
+  max-width: 450px;
+  width: 100%;
+}
+.filter-title {
+  font-size: 24px;
+  text-align: left;
+}
+.select {
+  border-radius: 10px;
+  padding: 5px 25px;
+}
+
+.input {
+  border-radius: 10px;
+  padding: 5px 15px;
+  border: solid 1px gray;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reset {
+  max-width: 250px;
+  height: 40px;
+}
+.card-container {
+  margin: auto;
+  max-width: 1600px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px skyblue;
+  border-radius: 5%;
+}
+.card-title {
+  width: 100%;
+}
+.card-description {
+  width: 200px;
+}
+.shape-btn {
+  border: none;
+  background: none;
+}
+.shape--item {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.shape-img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.shape-img:hover {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(29%) saturate(5633%) hue-rotate(8deg) brightness(105%)
+    contrast(96%);
+} 
+.checkbox-label {
+  background-color: red; 
+  width: 20px;
+  height: 20px;
+} 
+
+.checkbox-hidden {
+  
+}
