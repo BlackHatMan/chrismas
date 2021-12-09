@@ -1,4 +1,3 @@
-
 import React from "react";
 import ball_1 from "../assets/svg/ball.svg";
 import ball_2 from "../assets/svg/bell.svg";
@@ -8,42 +7,40 @@ import ball_5 from "../assets/svg/toy.svg";
 
 
 export const FilterShape = () => {
-  return (<div className="shape filter">
-    <p className="filter-title">Фильтры по значению</p>
-    <div className="shape--item"> Форма:
-      {/*   <input id="checkbox1" className="filter-checkbox" value="шар" type="checkbox"></input>
-      <label htmlFor="checkbox1" className="checkbox-label"><img className="checkbox-img" src={cbSvg} alt="" /></label>
-      <input value="колокольчик" type="checkbox"  ></input>
-      <input value="шишка" type="checkbox"></input>
-      <input value="снежинка" type="checkbox"></input>
-      <input value="фигурка" type="checkbox"></input> */}
-      <button className="shape-btn"><img className="shape-img" src={ball_1} alt=""></img></button>
-      <button className="shape-btn"><img className="shape-img" src={ball_2} alt=""></img></button>
-      <button className="shape-btn"><img className="shape-img" src={ball_3} alt=""></img></button>
-      <button className="shape-btn"><img className="shape-img" src={ball_4} alt=""></img></button>
-      <button className="shape-btn"><img className="shape-img" src={ball_5} alt=""></img></button>
-    </div>
-    <div className="shape--item"> Цвет:
-      <label htmlFor="checkbox-white" className="checkbox-label white">
-        <input id="checkbox-white" className="checkbox-hidden white" value="white" type="checkbox"></input>
-      </label>
-      <label htmlFor="checkbox-red" className="checkbox-label red">
-        <input id="checkbox-red" className="checkbox-hidden red" value="red" type="checkbox"></input>
-      </label>
-{/* 
-      <input className="checkbox-yellow" value="yellow" type="checkbox"  ></input>
-      <input className="checkbox-red" value="red" type="checkbox"></input>
-      <input className="checkbox-blue" value="blue" type="checkbox"></input>
-      <input className="checkbox-green" value="green" type="checkbox"></input> */}
-    </div>
-    <div className="shape--item"> Размер:
-      <input value="большой" type="checkbox"></input>
-      <input value="маленький" type="checkbox"  ></input>
-    </div>
-    <div className="shape--item"> Только любимые:
-      <input value="большой" type="checkbox"></input>
-    </div>
+return (<div className="filter">
+  <p className="filter-title">Фильтры по значению</p>
+  <div className="filter--item"> Форма:
+    <button className="shape-btn"><img className="shape-img" src={ball_1} alt=""></img></button>
+    <button className="shape-btn"><img className="shape-img" src={ball_2} alt=""></img></button>
+    <button className="shape-btn"><img className="shape-img" src={ball_3} alt=""></img></button>
+    <button className="shape-btn"><img className="shape-img" src={ball_4} alt=""></img></button>
+    <button className="shape-btn"><img className="shape-img" src={ball_5} alt=""></img></button>
   </div>
+  <div className="filter--item"> Цвет:
 
-  )
+    <input id="white" className="hidden" value="white" type="checkbox"></input>
+    <label htmlFor="white" className="checkbox-label white"></label>
+
+    <input id="yellow" className="hidden" value="yellow" type="checkbox"></input>
+    <label htmlFor="yellow" className="checkbox-label yellow"></label>
+
+    <input id="red" className="hidden" value="red" type="checkbox"></input>
+    <label htmlFor="red" className="checkbox-label red"></label>
+
+    <input id="blue" className="hidden" value="blue" type="checkbox"></input>
+    <label htmlFor="blue" className="checkbox-label blue"></label>
+
+    <input id="green" className="hidden" value="green" type="checkbox"></input>
+    <label htmlFor="green" className="checkbox-label green"></label>
+  </div>
+  <div className="filter--item"> Размер:
+    <input value="большой" type="checkbox"></input>
+    <input value="маленький" type="checkbox"></input>
+  </div>
+  <div className="shape--item"> Только любимые:
+    <input value="большой" type="checkbox"></input>
+  </div>
+</div>
+
+)
 }
