@@ -1,10 +1,7 @@
 .App {
   text-align: center;
 
-}
-.page {
-  background-image: url("./assets/bg.jpg"); 
-}
+} 
 .start--page-title{
   display: flex;
   flex-wrap: wrap;

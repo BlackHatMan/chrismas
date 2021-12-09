@@ -9,12 +9,14 @@ export const PageToys = () => {
 
     //let arr:Array<string> = ['1','2','3','1','2','3','1','2','3'];  
 
-    return (<div className="page page-toys">
+    return (
         <div className="blur">
+            <div className="page page-toys">
             <div className="controls">
+                <FilterSort />
                 <FilterShape />
                 <FilterRange />
-                <FilterSort />
+                
             </div>
             <div className="card-container">
                 <Card />

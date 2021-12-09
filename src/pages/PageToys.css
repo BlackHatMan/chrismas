@@ -1,22 +1,23 @@
 .controls {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .page-toys {
-  margin: auto;
-  background-image: url("../assets/bg.jpg");
-  color: #fff;
-  background-attachment: fixed;
-  background-size: cover;
+  margin: 0 auto;
+  max-width: 1600px;
+  display: flex;
+  color: white;
 }
 .blur {
+  position: absolute;
+  left: 0;
+  top: 0;
   background: rgba(22, 41, 41, 0.5);
   backdrop-filter: blur(3px);
-  height: 100%;
+  width: 100%;
 }
 .controls {
-  max-width: 1600px;
-  margin: auto;
+  max-width: 450px;
 }
 .card-img {
   width: 90px;
@@ -28,7 +29,8 @@
   width: 100%;
 }
 .filter-title {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 300;
   text-align: left;
 }
 .select {
@@ -53,14 +55,13 @@
   height: 40px;
 }
 .card-container {
-  margin: auto;
-  max-width: 1600px;
+  max-width: 1150px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 .card {
-  width: 300px;
+  width: 270px;
   display: flex;
   flex-wrap: wrap;
   border: solid 1px skyblue;
@@ -72,13 +73,15 @@
 .card-description {
   width: 200px;
 }
+.shape--item {
+  margin-right: 25px;
+}
 .shape-btn {
   border: none;
   background: none;
 }
-.filter--item {
+.filter--color {
   display: flex;
-  align-items: center; 
 }
 .shape-img {
   width: 40px;
@@ -91,10 +94,10 @@
 }
 
 .hidden {
-  /* opacity: 0;
+  opacity: 0;
   position: absolute;
-  z-index: -1; */
-  display: none;
+  z-index: -1; /* 
+  display: none; */
 }
 .hidden:checked + .checkbox-label::before {
   background-image: url("../assets/svg/checked.svg");
@@ -114,6 +117,7 @@
   border-radius: 5px;
   border: 1px solid transparent;
   cursor: pointer;
+  transition: ease 0.1s;
 }
 
 .white::before {
@@ -131,4 +135,28 @@
 }
 .green::before {
   background-color: green;
+}
+.filter--size,
+.filter--favorite,
+.filter--shape {
+  display: flex;
+  align-items: center;
+}
+
+.size-checkbox {
+  cursor: pointer;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: solid transparent;
+  border-radius: 5px;
+  outline: solid 1px #24c5db;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  transition: ease 0.1s;
+}
+.size-checkbox:checked {
+  background-clip: content-box;
+  background-color: #278D9F;
 }

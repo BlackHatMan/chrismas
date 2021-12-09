@@ -1,22 +1,47 @@
 import React from "react";
 import ball_1 from "../assets/svg/ball.svg";
 import ball_2 from "../assets/svg/bell.svg";
-import ball_3 from "../assets/svg/ball-2.svg";
+import ball_3 from "../assets/svg/cone.svg";
 import ball_4 from "../assets/svg/snowflake.svg";
 import ball_5 from "../assets/svg/toy.svg";
 
 
 export const FilterShape = () => {
 return (<div className="filter">
-  <p className="filter-title">Фильтры по значению</p>
-  <div className="filter--item"> Форма:
+   
+  
+  <h4 className="filter-title">Форма</h4>
+  <div className="filter--shape">  
+  <div className="shape--item">
     <button className="shape-btn"><img className="shape-img" src={ball_1} alt=""></img></button>
-    <button className="shape-btn"><img className="shape-img" src={ball_2} alt=""></img></button>
-    <button className="shape-btn"><img className="shape-img" src={ball_3} alt=""></img></button>
-    <button className="shape-btn"><img className="shape-img" src={ball_4} alt=""></img></button>
-    <button className="shape-btn"><img className="shape-img" src={ball_5} alt=""></img></button>
+    <p className="shape-text">Шар</p>
+
   </div>
-  <div className="filter--item"> Цвет:
+  <div className="shape--item">
+  <button className="shape-btn"><img className="shape-img" src={ball_2} alt=""></img></button>
+     <p className="shape-text">Шар</p>
+
+  </div>
+  <div className="shape--item">
+  <button className="shape-btn"><img className="shape-img" src={ball_3} alt=""></img></button>
+    <p className="shape-text">Шишка</p>
+
+  </div>
+  <div className="shape--item">
+  <button className="shape-btn"><img className="shape-img" src={ball_4} alt=""></img></button>
+    <p className="shape-text">Шар</p>
+
+  </div>
+  <div className="shape--item">
+  <button className="shape-btn"><img className="shape-img" src={ball_5} alt=""></img></button>
+ <p className="shape-text">Шар</p>
+
+  </div>  
+  </div>
+  
+  <h4 className="filter-title">Цвет</h4>
+  
+  <div className="filter--color">
 
     <input id="white" className="hidden" value="white" type="checkbox"></input>
     <label htmlFor="white" className="checkbox-label white"></label>
@@ -33,12 +58,24 @@ return (<div className="filter">
     <input id="green" className="hidden" value="green" type="checkbox"></input>
     <label htmlFor="green" className="checkbox-label green"></label>
   </div>
-  <div className="filter--item"> Размер:
-    <input value="большой" type="checkbox"></input>
-    <input value="маленький" type="checkbox"></input>
+  
+  <h4 className="filter-title">Размер</h4>
+  <div className="filter--size">   
+    <input id="big" className="size-checkbox" type="checkbox" value="big" name="" /> 
+    <label className="size-label" htmlFor="big">Большой</label>
+
+    <input id="medium" className="size-checkbox" type="checkbox" value="medium" name="" /> 
+    <label className="size-label" htmlFor="medium">Средний</label>
+
+    <input id="little" className="size-checkbox" type="checkbox" value="little" name="" /> 
+    <label className="size-label" htmlFor="little">Маленький</label> 
+    
   </div>
-  <div className="shape--item"> Только любимые:
-    <input value="большой" type="checkbox"></input>
+  
+  <div className="filter--favorite"> 
+    <input className="size-checkbox" value="большой" type="checkbox"></input>
+    
+  <h4 className="filter-title">Только любимые:</h4>
   </div>
 </div>
 
