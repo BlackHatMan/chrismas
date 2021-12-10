@@ -1,9 +1,5 @@
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-}
 .page-toys {
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 1600px;
   display: flex;
   color: white;
@@ -29,30 +25,21 @@
   width: 100%;
 }
 .filter-title {
+
   font-size: 18px;
   font-weight: 300;
   text-align: left;
+  margin: 15px 0px;
 }
-.select {
+.sort {
+  text-align: left;
+} 
+.sort--select {
+  display: inline-block;
+  max-width: 250px;
   border-radius: 10px;
   padding: 5px 25px;
-}
-
-.input {
-  border-radius: 10px;
-  padding: 5px 15px;
-  border: solid 1px gray;
-}
-
-.sort {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.reset {
-  max-width: 250px;
-  height: 40px;
+  margin-left: 10px;
 }
 .card-container {
   max-width: 1150px;
@@ -89,8 +76,13 @@
   cursor: pointer;
 }
 .shape-img:hover {
-  filter: brightness(0) saturate(100%) invert(87%) sepia(29%) saturate(5633%)
-    hue-rotate(8deg) brightness(105%) contrast(96%);
+  filter: brightness(0) saturate(100%) invert(87%) sepia(29%) saturate(5633%) hue-rotate(8deg) brightness(105%)
+    contrast(96%);
+}
+.shape-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 100;
 }
 
 .hidden {
@@ -113,7 +105,7 @@
   content: "";
   width: 25px;
   height: 25px;
-  margin: 10px;
+  margin: 0 10px;
   border-radius: 5px;
   border: 1px solid transparent;
   cursor: pointer;
@@ -158,5 +150,8 @@
 }
 .size-checkbox:checked {
   background-clip: content-box;
-  background-color: #278D9F;
+  background-color: #278d9f;
+}
+.size-label {
+  margin: 0 10px;
 }

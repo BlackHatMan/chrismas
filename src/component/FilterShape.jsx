@@ -7,7 +7,7 @@ import ball_5 from "../assets/svg/toy.svg";
 
 
 export const FilterShape = () => {
-return (<div className="filter">
+return (<div className="shape filter">
    
   
   <h4 className="filter-title">Форма</h4>
