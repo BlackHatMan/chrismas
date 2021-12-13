@@ -1,19 +1,19 @@
 import React from "react";
 
-export const Card = () => {
- 
+export const Card = (props) => { 
   return (
     <div className="card">
-      <h3 className="card-title">Колокольчик расписной</h3>
-      <img className="card-img" src="./image/toys/1.png" alt=""/>
-      <div className="card-description">
-        <p className="count"> Количество <span>3</span> </p>
-        <p className="year">Год покупки <span>11111</span> </p>
-        <p className="shape">Форма <span>колокольчик</span> </p>
-        <p className="color">Цвет <span>красный</span> </p>
-        <p className="size">Размер <span>большой</span> </p>
-        <p className="favorite">Любимая <span>нет</span> </p>
-      </div>
+      <h3 className="card-title"> {props.name} </h3>
+      <img className="card-img" src={`./image/toys/${props.num}.png`} alt="" />
+      <ul className="card--description">
+        <li className="description-item"> Количество: {props.count} </li>
+        <li className="description-item">Год покупки: {props.year}</li>
+        <li className="description-item">Форма: {props.shape} </li>
+        <li className="description-item">Цве: {props.color}</li>
+        <li className="description-item">Размер: {props.size}  </li>
+        <li className="description-item">Любимая:  da </li>
+      </ul>
+      <div className="card-ribbon"></div>
     </div>
   )
 }

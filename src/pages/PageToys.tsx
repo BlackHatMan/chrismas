@@ -1,32 +1,28 @@
-import React from "react"
+import React, { useState } from "react"
 import { Card } from "../component/Card"
 import { FilterRange } from "../component/FilterRange"
 import { FilterSort } from "../component/FilterSort"
 import { FilterShape } from "../component/FilterShape"
 import "./PageToys.css"
+import rawdData from '../js/data.js'
 
 export const PageToys = () => {
 
-  //let arr:Array<string> = ['1','2','3','1','2','3','1','2','3'];  
+  const [data, setData] = useState(() => rawdData)
 
   return (
     <div className="blur">
       <div className="page page-toys">
         <div className="controls">
           <FilterSort />
-          <FilterShape />
           <FilterRange />
+          <FilterShape data={data} setData={setData}
+            rawData={rawdData} />
 
         </div>
         <div className="card-container">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {data.map(el => Card(el))}
+
         </div>
       </div>
 

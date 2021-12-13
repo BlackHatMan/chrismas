@@ -3,6 +3,8 @@
   max-width: 1600px;
   display: flex;
   color: white;
+  justify-content: space-between;
+  column-gap: 30px;
 }
 .blur {
   position: absolute;
@@ -15,17 +17,11 @@
 .controls {
   max-width: 450px;
 }
-.card-img {
-  width: 90px;
-  height: 110px;
-  object-fit: contain;
-}
 .filter {
   max-width: 450px;
   width: 100%;
 }
 .filter-title {
-
   font-size: 18px;
   font-weight: 300;
   text-align: left;
@@ -33,7 +29,7 @@
 }
 .sort {
   text-align: left;
-} 
+}
 .sort--select {
   display: inline-block;
   max-width: 250px;
@@ -48,17 +44,43 @@
   flex-wrap: wrap;
 }
 .card {
-  width: 270px;
   display: flex;
   flex-wrap: wrap;
-  border: solid 1px skyblue;
-  border-radius: 5%;
+  max-width: 280px;  
+  border-radius: 10px;
+  border: 1px solid #278D9F;
+  background-color: rgba(31, 112, 127, .3);
+  position: relative;
+}
+
+.card-img {
+  width: 90px;
+  height: 110px;
+  object-fit: contain;
+  padding-right: 15px;
 }
 .card-title {
   width: 100%;
+  font-size: 18px;
 }
-.card-description {
-  width: 200px;
+.card--description {
+  max-width: 200px;
+  text-align: left;
+  padding: 0;
+}
+.description-item { 
+  list-style-type: none;
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+.card-ribbon {
+  width: 80px;
+  height: 25px;
+  background-color: yellow;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
 }
 .shape--item {
   margin-right: 25px;
@@ -154,4 +176,20 @@
 }
 .size-label {
   margin: 0 10px;
+}
+
+.range-count,
+.range-years {
+  margin: 0;
+  max-width: 380px;
+  width: 100%;
+}
+
+.range-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.range-label {
+  margin: 0 20px;
 }
