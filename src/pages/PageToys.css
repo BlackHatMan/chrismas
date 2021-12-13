@@ -96,8 +96,8 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-}
-.shape-img:hover {
+} 
+.active > .shape-img{
   filter: brightness(0) saturate(100%) invert(87%) sepia(29%) saturate(5633%) hue-rotate(8deg) brightness(105%)
     contrast(96%);
 }

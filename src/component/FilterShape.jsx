@@ -6,89 +6,103 @@ import ball_4 from "../assets/svg/snowflake.svg";
 import ball_5 from "../assets/svg/toy.svg";
 
 
-export const FilterShape = ({ data, setData, rawData }) => {
+export const FilterShape = ({ setData, rawData, isCircle, isBell, isCone, isSnow, isFigure,
+  setCircle, setBell, setCone, setSnow, setFigure }) => {
 
-  let isCircle = false;
-  let btn2 = false;
-  let btn3 = false;
-  let btn4 = false;
-  let btn5 = false;
+  function sortTarget(e) {
+    switch (e.value) {
+      case 'шар':
+        e.classList.toggle('active');
+        isCircle = !isCircle
+        setCircle(isCircle)
+        break;
+      case 'колокольчик':
+        e.classList.toggle('active')
+        isBell = !isBell
+        setBell(isBell)
+        break;
+      case 'шишка':
+        e.classList.toggle('active')
+        isCone = !isCone
+        setCone(isCone)
+        break;
+      case 'снежинка':
+        e.classList.toggle('active')
+        isSnow = !isSnow
+        setSnow(isSnow)
+        break;
+      case 'фигурка':
+        e.classList.toggle('active')
+        isFigure = !isFigure
+        setFigure(isFigure)
+        break;
 
-   let result = [];
-
-  function circle () {
-    const a = rawData.filter( el => el.shape === 'шар')
-    if(isCircle){
-
-      result.concat(a)
-      isCircle = !isCircle
+      default:
     }
+
+    sortCompilation()
   }
 
-  function sort(value) {
-
-    let sortArr = data.filter(el => el.shape === value);
-     
-    if (data.length < 55) { 
-      let sortArr = rawData.filter(el => el.shape === value);
-
-      setData(prevState => [...prevState, ...sortArr])
-
-    } else {
-
-      setData(sortArr)
+  function sortCompilation() {
+    let res = []
+    if (isCircle) {
+      let a = rawData.filter(el => el.shape === 'шар')
+      res = [...res, ...a]
     }
-  }
-
-
-  function uniSex(currentTarget) {
-    let a = currentTarget.classList.contains('active')
-
-    if (a) {
-      currentTarget.classList.remove('active')
-
-    } else {
-      currentTarget.classList.add('active')
-      sort(currentTarget.value)
-
+    if (isBell) {
+      let a = rawData.filter(el => el.shape === 'колокольчик')
+      res = [...res, ...a]
     }
-  }
+    if (isCone) {
+      let a = rawData.filter(el => el.shape === 'шишка')
+      res = [...res, ...a]
+    }
+    if (isSnow) {
+      let a = rawData.filter(el => el.shape === 'снежинка')
+      res = [...res, ...a]
+    }
+    if (isFigure) {
+      let a = rawData.filter(el => el.shape === 'фигурка')
+      res = [...res, ...a]
+    }
 
+    setData(res.length === 0 ? rawData : res)
+
+  }
 
   return (<div className="shape filter">
-
     <h4 className="filter-title">Форма</h4>
     <div className="filter--shape">
       <div className="shape--item">
-        <button className="shape-btn" onClick={(e) => uniSex(e.currentTarget)} value="Шар">
+        <button className="shape-btn" onClick={(e) => sortTarget(e.currentTarget)} value="шар">
           <img className="shape-img" src={ball_1} alt=""></img>
         </button>
         <p className="shape-text">Шар</p>
       </div>
 
       <div className="shape--item">
-        <button className="shape-btn" onClick={(e) => uniSex(e.currentTarget)} value="колокольчик">
+        <button className="shape-btn" onClick={(e) => sortTarget(e.currentTarget)} value="колокольчик">
           <img className="shape-img" src={ball_2} alt=""></img>
         </button>
         <p className="shape-text">Колокольчик</p>
 
       </div>
       <div className="shape--item">
-        <button className="shape-btn" onClick={(e) => uniSex(e.currentTarget)} value="шишка">
+        <button className="shape-btn" onClick={(e) => sortTarget(e.currentTarget)} value="шишка">
           <img className="shape-img" src={ball_3} alt=""></img>
         </button>
         <p className="shape-text">Шишка</p>
 
       </div>
       <div className="shape--item">
-        <button className="shape-btn" onClick={(e) => uniSex(e.currentTarget)} value="снежинка">
+        <button className="shape-btn" onClick={(e) => sortTarget(e.currentTarget)} value="снежинка">
           <img className="shape-img" src={ball_4} alt=""></img>
         </button>
         <p className="shape-text">Снежинка</p>
 
       </div>
       <div className="shape--item">
-        <button className="shape-btn" onClick={(e) => uniSex(e.currentTarget)} value="фигурка">
+        <button className="shape-btn" onClick={(e) => sortTarget(e.currentTarget)} value="фигурка">
           <img className="shape-img" src={ball_5} alt=""></img>
         </button>
         <p className="shape-text">Фигурка</p>
