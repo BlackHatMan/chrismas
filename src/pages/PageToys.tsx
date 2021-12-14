@@ -36,12 +36,8 @@ export const PageToys = () => {
         </div>
         <div className="card-container">
           {data.map(el => Card(el))}
-
         </div>
       </div>
-
     </div>
-
   )
-
 }

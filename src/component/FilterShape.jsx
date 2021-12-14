@@ -8,7 +8,7 @@ import ball_5 from "../assets/svg/toy.svg";
 
 export const FilterShape = ({ setData, rawData, isCircle, isBell, isCone, isSnow, isFigure,
   setCircle, setBell, setCone, setSnow, setFigure }) => {
-
+    
   function sortTarget(e) {
     switch (e.value) {
       case 'шар':
@@ -39,35 +39,32 @@ export const FilterShape = ({ setData, rawData, isCircle, isBell, isCone, isSnow
 
       default:
     }
-
     sortCompilation()
   }
 
   function sortCompilation() {
-    let res = []
+    let result = [];
     if (isCircle) {
       let a = rawData.filter(el => el.shape === 'шар')
-      res = [...res, ...a]
+      result = [...result, ...a]
     }
     if (isBell) {
       let a = rawData.filter(el => el.shape === 'колокольчик')
-      res = [...res, ...a]
+      result = [...result, ...a]
     }
     if (isCone) {
       let a = rawData.filter(el => el.shape === 'шишка')
-      res = [...res, ...a]
+      result = [...result, ...a]
     }
     if (isSnow) {
       let a = rawData.filter(el => el.shape === 'снежинка')
-      res = [...res, ...a]
+      result = [...result, ...a]
     }
     if (isFigure) {
       let a = rawData.filter(el => el.shape === 'фигурка')
-      res = [...res, ...a]
+      result = [...result, ...a]
     }
-
-    setData(res.length === 0 ? rawData : res)
-
+    setData(result.length === 0 ? rawData : result)
   }
 
   return (<div className="shape filter">
