@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.css'; 
 /* import { PageStart } from './pages/PageStart'; */
 import { PageToys } from './pages/PageToys';
 
@@ -8,8 +8,9 @@ function App() {
     <div className="App">
       <header className="App-header">
       </header>
-   {/*   <PageStart/>  */}
-     <PageToys/>
+      {/*   <PageStart/>  */}
+      <PageToys />
+     
     </div>
   );
 }
