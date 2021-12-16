@@ -1,6 +1,6 @@
 import React from "react";
 
-export const FilterColor = () => {
+export const FilterColor = ({setData, rawData}) => {
 
 
   return (<div className="color filter">
@@ -8,7 +8,7 @@ export const FilterColor = () => {
 
     <div className="filter--color">
 
-      <input id="white" className="hidden" value="white" type="checkbox"></input>
+      <input id="white"   className="hidden" value="white" type="checkbox"></input>
       <label htmlFor="white" className="checkbox-label white"></label>
 
       <input id="yellow" className="hidden" value="yellow" type="checkbox"></input>

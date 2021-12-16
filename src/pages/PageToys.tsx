@@ -11,6 +11,21 @@ import { FilterColor } from "../component/FilterColor"
 
 
 export const PageToys = () => {
+  const initialStatus = {
+    isCircle: false,
+    isBellL: false,
+    isCone: false,
+    isSnow: false,
+    isFigure: false,
+    isBig: false,
+    isMedium: false,
+    isSmall: false,
+    isWhite: false,
+    isYellow: false,
+    isRes: false,
+    isBlue: false,
+    isGreen: false
+  }
   const [data, setData] = useState(rawdData)
   return (
     <div className="blur">
@@ -19,9 +34,10 @@ export const PageToys = () => {
           <FilterGlobal />
           <FilterSort />
           <FilterShape setData={setData}
-            rawData={rawdData} />
+            rawData={rawdData} initialStatus={initialStatus} />
           <FilterRange />
-          <FilterColor/>
+          <FilterColor setData={setData}
+            rawData={rawdData} />
           <FilterReset />
         </div>
         <div className="wrapper">

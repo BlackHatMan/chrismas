@@ -2,9 +2,6 @@ import React from "react";
 import Nouislider from "nouislider-react";
 import "./nouislider.css";
 
-
-
-
 export class SliderYears extends React.Component {
 
   state = {
