@@ -1,6 +1,6 @@
 import React from "react";
 
-export const FilterColor = ({setData, rawData}) => {
+export const FilterColor = ({ sortTarget }) => {
 
 
   return (<div className="color filter">
@@ -8,19 +8,19 @@ export const FilterColor = ({setData, rawData}) => {
 
     <div className="filter--color">
 
-      <input id="white"   className="hidden" value="white" type="checkbox"></input>
+      <input id="white" onClick={(e) => sortTarget(e.currentTarget)} className="hidden" value="белый" type="checkbox"></input>
       <label htmlFor="white" className="checkbox-label white"></label>
 
-      <input id="yellow" className="hidden" value="yellow" type="checkbox"></input>
+      <input id="yellow" onClick={(e) => sortTarget(e.currentTarget)} className="hidden" value="желтый" type="checkbox"></input>
       <label htmlFor="yellow" className="checkbox-label yellow"></label>
 
-      <input id="red" className="hidden" value="red" type="checkbox"></input>
+      <input id="red" onClick={(e) => sortTarget(e.currentTarget)} className="hidden" value="red" type="checkbox" value="красный"></input>
       <label htmlFor="red" className="checkbox-label red"></label>
 
-      <input id="blue" className="hidden" value="blue" type="checkbox"></input>
+      <input id="blue" onClick={(e) => sortTarget(e.currentTarget)} className="hidden" value="blue" type="checkbox" value="синий"></input>
       <label htmlFor="blue" className="checkbox-label blue"></label>
 
-      <input id="green" className="hidden" value="green" type="checkbox"></input>
+      <input id="green" onClick={(e) => sortTarget(e.currentTarget)} className="hidden" value="green" type="checkbox" value="зеленый"></input>
       <label htmlFor="green" className="checkbox-label green"></label>
     </div></div>
 
