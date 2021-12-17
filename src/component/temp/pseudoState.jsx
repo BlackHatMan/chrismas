@@ -69,6 +69,7 @@ export const pseudoState = ({ e, setData, rawData, status, setStatus }) => {
 
   function sortCompilation() {
     let result = [];
+
     if (status.isCircle) {
       const sorted = rawData.filter(el => el.shape === 'шар')
       result = [...result, ...sorted]
@@ -106,7 +107,14 @@ export const pseudoState = ({ e, setData, rawData, status, setStatus }) => {
       const green = status.isGreen ? result.filter(el => el.color === 'зелёный') : [];
       result = [...white, ...yellow, ...red, ...blue, ...green]
     }
-    return setData(result)
+
+    let minYears = result.filter(el => el.year >= status.startYear);
+    let maxYears = minYears.filter(el => el.year <= status.endYear);
+    let minCount = maxYears.filter(el => el.count >= status.minCount);
+    let maxCount = minCount.filter(el => el.count <= status.maxCount);
+
+
+    return setData(maxCount)
   }
 
 }

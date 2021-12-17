@@ -3,38 +3,40 @@ import Nouislider from "nouislider-react";
 import "./nouislider.css";
 
 export class SliderYears extends React.Component {
-
   state = {
-    minValue: 1940,
-    maxValue: 2021
-  };
+    startYear: 1940,
+    endYear: 2021
+  }
   onUpdate = (render, handle, value) => {
     this.setState({
-      minValue: value[0].toFixed(),
-      maxValue: value[1].toFixed()
+      startYear:  Math.floor(value[0]),
+      endYear:  Math.floor(value[1])
+    })
+
+    this.props.setStatus((prevState) => {
+      return { ...prevState, ...this.state }
     })
   }
 
   render() {
-    const { minValue, maxValue } = this.state;
     return (
       <div className="slider">
         <h4 className="filter-title">Год приобретения</h4>
         <Nouislider
           connect
           margin={10}
-          step={1}
-          start={[1940, 2021]}
+          step={5}
+          start={[this.state.startYear, this.state.endYear]}
           range={{
             min: 1940,
             max: 2021
           }}
-          onSlide={this.onUpdate}
+          onUpdate={this.onUpdate}
         />
 
         <div className="value-wrapper">
-          <label className="min-value">{minValue}</label>
-          <label className="max-value">{maxValue}</label>
+          <label className="min-value">{this.state.startYear}</label>
+          <label className="max-value">{this.state.endYear}</label>
         </div>
       </div>
     );

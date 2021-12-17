@@ -1,6 +1,6 @@
 import React from "react";
-import snow from "../assets/svg/snow.svg"
-import volume from "../assets/svg/audio.svg"
+import snow from "../../assets/svg/snow.svg"
+import volume from "../../assets/svg/audio.svg"
 
 
 export const FilterGlobal = () => {

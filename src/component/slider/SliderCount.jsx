@@ -3,42 +3,41 @@ import Nouislider from "nouislider-react";
 import "./nouislider.css";
 
 
-
-class SliderCount extends React.Component {
+export class SliderCount extends React.Component {
   state = {
-    minValue: 1,
-    maxValue: 100
+    minCount: 1,
+    maxCount: 20
   };
   onUpdate = (render, handle, value) => {
     this.setState({
-      minValue: value[0].toFixed(),
-      maxValue: value[1].toFixed()
+      minCount: Math.floor(value[0]),
+      maxCount: Math.floor(value[1])
+    })
+    this.props.setStatus((prevState) => {
+      return { ...prevState, ...this.state }
     })
   }
 
   render() {
-    const { minValue, maxValue } = this.state;
     return (
       <div className="slider">
         <h4 className="filter-title">Количество экземпляров</h4>
         <Nouislider
           connect
-          margin={10}
           step={1}
-          start={[1, 100]}
+          start={[this.state.minCount, this.state.maxCount]}
           range={{
             min: 1,
-            max: 100
+            max: 20
           }}
           onSlide={this.onUpdate}
         />
 
         <div className="value-wrapper">
-          <label className="min-value">{minValue}</label>
-          <label className="max-value">{maxValue}</label>
+          <label className="min-value">{this.state.minCount}</label>
+          <label className="max-value">{this.state.maxCount}</label>
         </div>
       </div>
     );
   }
-}
-export default SliderCount;
+} 

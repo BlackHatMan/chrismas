@@ -1,29 +1,25 @@
 import React, { useState } from "react"
 import { Card } from "../component/Card"
-import { FilterSort } from "../component/FilterSort"
-import { FilterShape } from "../component/FilterShape"
-import { FilterGlobal } from "../component/FilterGlobal"
-import { FilterReset } from "../component/FilterReset"
-import { FilterRange } from "../component/FilterRange"
+import { FilterSort } from "../component/filters/FilterSort"
+import { FilterShape } from "../component/filters/FilterShape"
+import { FilterGlobal } from "../component/filters/FilterGlobal"
+import { FilterReset } from "../component/filters/FilterReset"
+import { FilterRange } from "../component/filters/FilterRange"
 import "./PageToys.css"
 import rawData from '../js/data.js'
-import { FilterColor } from "../component/FilterColor"
+import { FilterColor } from "../component/filters/FilterColor"
 import { pseudoState } from "../component/temp/pseudoState"
 import { initialStatus } from "../component/temp/initialStatus"
 
 
 export const PageToys = () => {
 
-  
-
   const [data, setData] = useState(rawData);
-  const [status, setStatus] = useState(initialStatus);
+  const [status, setStatus] = useState(() => initialStatus);
 
-  let sortTarget = (e: Event) => {
+  let sortTarget = (e: HTMLElement) => {
     pseudoState({ e, setData, rawData, status, setStatus });
   };
-
-
 
 
   return (
@@ -33,7 +29,7 @@ export const PageToys = () => {
           <FilterGlobal />
           <FilterSort />
           <FilterShape sortTarget={sortTarget} />
-          <FilterRange />
+          <FilterRange status={status} setStatus={setStatus} />
           <FilterColor sortTarget={sortTarget} />
           <FilterReset />
         </div>

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import ball_1 from "../assets/svg/ball.svg";
-import ball_2 from "../assets/svg/bell.svg";
-import ball_3 from "../assets/svg/cone.svg";
-import ball_4 from "../assets/svg/snowflake.svg";
-import ball_5 from "../assets/svg/toy.svg";
+import React from "react";
+import ball_1 from "../../assets/svg/ball.svg";
+import ball_2 from "../../assets/svg/bell.svg";
+import ball_3 from "../../assets/svg/cone.svg";
+import ball_4 from "../../assets/svg/snowflake.svg";
+import ball_5 from "../../assets/svg/toy.svg";
 
 
 export const FilterShape = ({ sortTarget }) => {

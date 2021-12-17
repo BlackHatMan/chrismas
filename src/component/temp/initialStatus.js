@@ -12,8 +12,8 @@ export const initialStatus = {
   isRes: false,
   isBlue: false,
   isGreen: false, 
-  startYear: 1940,
+  startYear: 1939,
   endYear: 2021,
-  startCount: 1,
-  endCount: 100
+  minCount: 1,
+  maxCount: 20
 }
