@@ -1,4 +1,4 @@
-export const initialStatus = {
+export const initialStore = {
   isCircle: false,
   isBellL: false,
   isCone: false,
@@ -9,9 +9,12 @@ export const initialStatus = {
   isSmall: false,
   isWhite: false,
   isYellow: false,
-  isRes: false,
+  isRed: false,
   isBlue: false,
-  isGreen: false, 
+  isGreen: false
+}
+
+export const initialSliderStore = {
   startYear: 1939,
   endYear: 2021,
   minCount: 1,

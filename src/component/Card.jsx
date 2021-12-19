@@ -2,7 +2,7 @@ import React from "react";
 
 export const Card = (props) => { 
   return (
-    <div className="card">
+    <div className="card" key={props.num}>
       <h3 className="card-title"> {props.name} </h3>
       <img className="card-img" src={`./image/toys/${props.num}.png`} alt="" />
       <ul className="card--description">

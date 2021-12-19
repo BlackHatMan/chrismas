@@ -1,26 +1,46 @@
-import React, { useState } from "react"
+import React, { useEffect, useLayoutEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Card } from "../component/Card"
-import { FilterSort } from "../component/filters/FilterSort"
-import { FilterShape } from "../component/filters/FilterShape"
-import { FilterGlobal } from "../component/filters/FilterGlobal"
-import { FilterReset } from "../component/filters/FilterReset"
-import { FilterRange } from "../component/filters/FilterRange"
-import "./PageToys.css"
-import rawData from '../js/data.js'
 import { FilterColor } from "../component/filters/FilterColor"
-import { pseudoState } from "../component/temp/pseudoState"
-import { initialStatus } from "../component/temp/initialStatus"
+import { FilterGlobal } from "../component/filters/FilterGlobal"
+import { FilterRange } from "../component/filters/FilterRange"
+import { FilterReset } from "../component/filters/FilterReset"
+import { FilterShape } from "../component/filters/FilterShape"
+import { FilterSort } from "../component/filters/FilterSort"
+import { sortCompilation } from "../component/store/sortCompilation"
+import "./PageToys.css";
+import dataRaw from "../js/data.js"
 
 
 export const PageToys = () => {
+  let data = useSelector(state => sortCompilation(state));
 
-  const [data, setData] = useState(rawData);
-  const [status, setStatus] = useState(() => initialStatus);
+  const dispatch = useDispatch();
 
-  let sortTarget = (e: HTMLElement) => {
-    pseudoState({ e, setData, rawData, status, setStatus });
-  };
+  useEffect(() => {
+    data = dataRaw
 
+  }, [])
+
+
+
+  const handler = (currentTarget: HTMLButtonElement) => {
+    const action = {
+      type: currentTarget.value,
+      currentTarget
+    }
+    dispatch(action)
+  }
+
+  const handlerScroll = (value: Array<number>, type: string) => {
+    const action = {
+      type,
+      valueStart: value[0],
+      valueEnd: value[1]
+
+    }
+    dispatch(action)
+  }
 
   return (
     <div className="blur">
@@ -28,15 +48,16 @@ export const PageToys = () => {
         <div className="controls">
           <FilterGlobal />
           <FilterSort />
-          <FilterShape sortTarget={sortTarget} />
-          <FilterRange status={status} setStatus={setStatus} />
-          <FilterColor sortTarget={sortTarget} />
+          <FilterShape handler={handler} />
+          <FilterRange handlerScroll={handlerScroll} />
+          <FilterColor handler={handler} />
           <FilterReset />
         </div>
         <div className="wrapper">
           <h2 className="toys-title"> ИГРУШКИ </h2>
           <div className="card-container">
-            {data.map(el => Card(el))}
+            {data.length === 0 ? <div style={{ fontSize: "60px" }}>Таких няма</div>
+              : data.map(el => Card(el))}
           </div>
         </div>
       </div>

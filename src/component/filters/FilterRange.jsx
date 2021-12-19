@@ -1,12 +1,12 @@
 import React from "react";
-import {SliderCount} from "../slider/SliderCount";
+import { SliderCount } from "../slider/SliderCount";
 import { SliderYears } from "../slider/SliderYears";
 
-export const FilterRange = ( {status, setStatus}) => {
+export const FilterRange = ({ handlerScroll }) => {
 
   return (<div className="range filter">
-    <SliderYears status={status} setStatus={setStatus} />
-    <SliderCount status={status} setStatus={setStatus}/>
+    <SliderYears handlerScroll={handlerScroll} />
+    <SliderCount handlerScroll={handlerScroll} />
   </div>
   )
 }

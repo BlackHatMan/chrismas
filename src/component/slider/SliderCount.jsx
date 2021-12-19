@@ -8,14 +8,15 @@ export class SliderCount extends React.Component {
     minCount: 1,
     maxCount: 20
   };
+
   onUpdate = (render, handle, value) => {
     this.setState({
-      minCount: Math.floor(value[0]),
-      maxCount: Math.floor(value[1])
+      startYear: Math.floor(value[0]),
+      endYear: Math.floor(value[1])
     })
-    this.props.setStatus((prevState) => {
-      return { ...prevState, ...this.state }
-    })
+
+
+    this.props.handlerScroll(value, 'count')
   }
 
   render() {

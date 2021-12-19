@@ -5,17 +5,16 @@ import "./nouislider.css";
 export class SliderYears extends React.Component {
   state = {
     startYear: 1940,
-    endYear: 2021
+    endYear: 2021,
   }
   onUpdate = (render, handle, value) => {
     this.setState({
-      startYear:  Math.floor(value[0]),
-      endYear:  Math.floor(value[1])
+      startYear: Math.floor(value[0]),
+      endYear: Math.floor(value[1])
     })
 
-    this.props.setStatus((prevState) => {
-      return { ...prevState, ...this.state }
-    })
+
+    this.props.handlerScroll(value, 'years')
   }
 
   render() {
@@ -25,7 +24,7 @@ export class SliderYears extends React.Component {
         <Nouislider
           connect
           margin={10}
-          step={5}
+          step={1}
           start={[this.state.startYear, this.state.endYear]}
           range={{
             min: 1940,
