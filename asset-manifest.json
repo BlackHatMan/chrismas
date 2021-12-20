@@ -1,29 +1,30 @@
 {
   "files": {
-    "main.css": "/chrismas/static/css/main.3dfb04e6.chunk.css",
-    "main.js": "/chrismas/static/js/main.2882d189.chunk.js",
-    "main.js.map": "/chrismas/static/js/main.2882d189.chunk.js.map",
+    "main.css": "/chrismas/static/css/main.5c214973.chunk.css",
+    "main.js": "/chrismas/static/js/main.0ee8f94b.chunk.js",
+    "main.js.map": "/chrismas/static/js/main.0ee8f94b.chunk.js.map",
     "runtime-main.js": "/chrismas/static/js/runtime-main.5d2bc95c.js",
     "runtime-main.js.map": "/chrismas/static/js/runtime-main.5d2bc95c.js.map",
-    "static/js/2.67d2c5b5.chunk.js": "/chrismas/static/js/2.67d2c5b5.chunk.js",
-    "static/js/2.67d2c5b5.chunk.js.map": "/chrismas/static/js/2.67d2c5b5.chunk.js.map",
+    "static/js/2.5b8caa24.chunk.js": "/chrismas/static/js/2.5b8caa24.chunk.js",
+    "static/js/2.5b8caa24.chunk.js.map": "/chrismas/static/js/2.5b8caa24.chunk.js.map",
     "index.html": "/chrismas/index.html",
-    "static/css/main.3dfb04e6.chunk.css.map": "/chrismas/static/css/main.3dfb04e6.chunk.css.map",
-    "static/js/2.67d2c5b5.chunk.js.LICENSE.txt": "/chrismas/static/js/2.67d2c5b5.chunk.js.LICENSE.txt",
+    "static/css/main.5c214973.chunk.css.map": "/chrismas/static/css/main.5c214973.chunk.css.map",
+    "static/js/2.5b8caa24.chunk.js.LICENSE.txt": "/chrismas/static/js/2.5b8caa24.chunk.js.LICENSE.txt",
     "static/media/audio.f77405bc.svg": "/chrismas/static/media/audio.f77405bc.svg",
     "static/media/ball.02ba2b1b.svg": "/chrismas/static/media/ball.02ba2b1b.svg",
     "static/media/bell.bb18e4ce.svg": "/chrismas/static/media/bell.bb18e4ce.svg",
     "static/media/index.css": "/chrismas/static/media/bg.22ad0824.jpg",
     "static/media/PageToys.css": "/chrismas/static/media/checked.6e6f48c5.svg",
     "static/media/cone.7a360a86.svg": "/chrismas/static/media/cone.7a360a86.svg",
+    "static/media/App.css": "/chrismas/static/media/rs_school_js.1e1182a2.svg",
     "static/media/snow.127061e2.svg": "/chrismas/static/media/snow.127061e2.svg",
     "static/media/snowflake.a7de9f17.svg": "/chrismas/static/media/snowflake.a7de9f17.svg",
     "static/media/toy.d8ea3c17.svg": "/chrismas/static/media/toy.d8ea3c17.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5d2bc95c.js",
-    "static/js/2.67d2c5b5.chunk.js",
-    "static/css/main.3dfb04e6.chunk.css",
-    "static/js/main.2882d189.chunk.js"
+    "static/js/2.5b8caa24.chunk.js",
+    "static/css/main.5c214973.chunk.css",
+    "static/js/main.0ee8f94b.chunk.js"
   ]
 }
