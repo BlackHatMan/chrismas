@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Card } from "../component/Card"
 import { FilterColor } from "../component/filters/FilterColor"
@@ -8,23 +8,25 @@ import { FilterReset } from "../component/filters/FilterReset"
 import { FilterShape } from "../component/filters/FilterShape"
 import { FilterSort } from "../component/filters/FilterSort"
 import { sortCompilation } from "../component/store/sortCompilation"
-import "./PageToys.css";
-import dataRaw from "../js/data.js"
+import "./PageToys.css"
+import rawData from "../js/data"
 
 
-export const PageToys = () => {
-  let data = useSelector(state => sortCompilation(state));
+export const PageToys = () => { 
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    data = dataRaw
+  let state = useSelector(state => state);
+  let data = sortCompilation(state);
 
+
+  useEffect(() => {
+    data = rawData
+    console.log("data")
   }, [])
 
+  const toggleHandler = (currentTarget: HTMLButtonElement) => {
 
-
-  const handler = (currentTarget: HTMLButtonElement) => {
     const action = {
       type: currentTarget.value,
       currentTarget
@@ -32,12 +34,17 @@ export const PageToys = () => {
     dispatch(action)
   }
 
-  const handlerScroll = (value: Array<number>, type: string) => {
+  const scrollHandler = (value: Array<number>, type: string) => {
     const action = {
       type,
       valueStart: value[0],
       valueEnd: value[1]
-
+    }
+    dispatch(action)
+  }
+  const sortHandler = (type: string) => {
+    const action = {
+      type
     }
     dispatch(action)
   }
@@ -47,10 +54,10 @@ export const PageToys = () => {
       <div className="page page-toys">
         <div className="controls">
           <FilterGlobal />
-          <FilterSort />
-          <FilterShape handler={handler} />
-          <FilterRange handlerScroll={handlerScroll} />
-          <FilterColor handler={handler} />
+          <FilterSort sortHandler={sortHandler} />
+          <FilterShape toggleHandler={toggleHandler} />
+          <FilterRange scrollHandler={scrollHandler} />
+          <FilterColor toggleHandler={toggleHandler} />
           <FilterReset />
         </div>
         <div className="wrapper">

@@ -7,14 +7,14 @@ export class SliderYears extends React.Component {
     startYear: 1940,
     endYear: 2021,
   }
-  onUpdate = (render, handle, value) => {
+  onUpdate = (render, handle, value) => { 
     this.setState({
       startYear: Math.floor(value[0]),
       endYear: Math.floor(value[1])
     })
 
 
-    this.props.handlerScroll(value, 'years')
+    this.props.scrollHandler(value, 'years')
   }
 
   render() {
@@ -30,7 +30,7 @@ export class SliderYears extends React.Component {
             min: 1940,
             max: 2021
           }}
-          onUpdate={this.onUpdate}
+          onSlide={this.onUpdate}
         />
 
         <div className="value-wrapper">

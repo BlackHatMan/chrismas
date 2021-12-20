@@ -11,7 +11,7 @@ export const Card = (props) => {
         <li className="description-item">Форма: {props.shape} </li>
         <li className="description-item">Цве: {props.color}</li>
         <li className="description-item">Размер: {props.size}  </li>
-        <li className="description-item">Любимая:  da </li>
+        <li className="description-item">Любимая: {props.favorite ? "да" : "нет"} </li>
       </ul>
       <div className="card-ribbon"></div>
     </div>

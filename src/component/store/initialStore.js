@@ -1,4 +1,4 @@
-export const initialStore = {
+export const toggleState = {
   isCircle: false,
   isBellL: false,
   isCone: false,
@@ -14,9 +14,16 @@ export const initialStore = {
   isGreen: false
 }
 
-export const initialSliderStore = {
-  startYear: 1939,
+export const sliderState = {
+  startYear: 1940,
   endYear: 2021,
   minCount: 1,
   maxCount: 20
+}
+export const sortState = {
+  nameUp: false,
+  nameDown: false,
+  countUp: false,
+  countDown: false
+
 }

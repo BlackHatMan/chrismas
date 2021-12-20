@@ -13,7 +13,7 @@ export const FilterGlobal = () => {
       <button className="global-ice filter-btn">
         <img className="filter-img" src={volume} alt="" />
       </button>
-      <input className="global-search" type="text" placeholder="   Поиск" />
+      <input className="global-search" type="text" placeholder="   Поиск" autoFocus={true} />
 
 
     </div>

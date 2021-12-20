@@ -1,18 +1,18 @@
 import { combineReducers, createStore } from "redux";
-import { initialStore, initialSliderStore } from "./initialStore.js";
+import { toggleState, sliderState, sortState } from "./initialStore.js";
 
-const slideReducer = (state = initialSliderStore, action) => {
+const slideReducer = (state = sliderState, action) => {
   switch (action.type) {
-    case 'years': 
+    case 'years':
       return { ...state, startYear: action.valueStart, endYear: action.valueEnd }
-    case 'count': 
+    case 'count':
       return { ...state, minCount: action.valueStart, maxCount: action.valueEnd }
 
     default:
       return state
   }
 }
-const reducer = (state = initialStore, action) => {
+const toggleReducer = (state = toggleState, action) => {
   switch (action.type) {
     case 'шар':
       action.currentTarget.classList.toggle('active');
@@ -45,16 +45,30 @@ const reducer = (state = initialStore, action) => {
       return { ...state, isBlue: state.isBlue = !state.isBlue }
     case 'green':
       return { ...state, isGreen: state.isGreen = !state.isGreen }
-
-
     default:
       return state
   }
 }
+const sortReducer = (state = sortState, action) => {
+  switch (action.type) {
+    case 'nameUp':
+      return { ...sortState, nameUp: true }
+    case 'nameDown':
+      return { ...sortState, nameDown: true }
+    case 'countUp':
+      return { ...sortState, countUp: true }
+    case 'countDown':
+      return { ...sortState, countDown: true }
+    default:
+      return state
+  }
+
+}
 
 const rootReducer = combineReducers({
-  toggle: reducer,
-  range: slideReducer
+  toggle: toggleReducer,
+  range: slideReducer,
+  sort: sortReducer
 })
 
 export const store = createStore(rootReducer) 

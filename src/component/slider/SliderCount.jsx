@@ -16,7 +16,7 @@ export class SliderCount extends React.Component {
     })
 
 
-    this.props.handlerScroll(value, 'count')
+    this.props.scrollHandler(value, 'count')
   }
 
   render() {

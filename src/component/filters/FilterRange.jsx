@@ -2,11 +2,11 @@ import React from "react";
 import { SliderCount } from "../slider/SliderCount";
 import { SliderYears } from "../slider/SliderYears";
 
-export const FilterRange = ({ handlerScroll }) => {
+export const FilterRange = ({ scrollHandler }) => {
 
   return (<div className="range filter">
-    <SliderYears handlerScroll={handlerScroll} />
-    <SliderCount handlerScroll={handlerScroll} />
+    <SliderYears scrollHandler={scrollHandler} />
+    <SliderCount scrollHandler={scrollHandler} />
   </div>
   )
 }
