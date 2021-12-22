@@ -1,44 +1,44 @@
-import React from "react";
+import React, {useState} from "react";
 import Nouislider from "nouislider-react";
 import "./nouislider.css";
+import {useDispatch} from "react-redux";
+import {actionSetCount} from "../../store/productReducer";
 
+export  const SliderCount = () =>  {
+  const dispatch = useDispatch()
+  const [count , setCount] = useState({
+    min: 1,
+    max: 20,
+  })
 
-export class SliderCount extends React.Component {
-  state = {
-    minCount: 1,
-    maxCount: 20
-  };
-
-  onUpdate = (render, handle, value) => {
-    this.setState({
-      startYear: Math.floor(value[0]),
-      endYear: Math.floor(value[1])
+  const handler = (render, handle, value) => {
+    let min = Math.floor(value[0])
+    let max =  Math.floor(value[1])
+    setCount({
+      min,
+      max
     })
-
-
-    this.props.scrollHandler(value, 'count')
+    dispatch(actionSetCount(min, max))
   }
 
-  render() {
-    return (
-      <div className="slider">
-        <h4 className="filter-title">Количество экземпляров</h4>
-        <Nouislider
-          connect
-          step={1}
-          start={[this.state.minCount, this.state.maxCount]}
-          range={{
-            min: 1,
-            max: 20
-          }}
-          onSlide={this.onUpdate}
-        />
+  return (
+    <div className="slider">
+      <h4 className="filter-title">Количество экземпляров</h4>
+      <Nouislider
+        connect
+        step={1}
+        start={[count.min, count.max]}
+        range={{
+          min: 1,
+          max: 20
+        }}
+        onUpdate={handler}
+      />
 
-        <div className="value-wrapper">
-          <label className="min-value">{this.state.minCount}</label>
-          <label className="max-value">{this.state.maxCount}</label>
-        </div>
+      <div className="value-wrapper">
+        <label className="min-value">{count.min}</label>
+        <label className="max-value">{count.max}</label>
       </div>
-    );
-  }
-} 
+    </div>
+  );
+}

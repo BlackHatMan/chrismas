@@ -1,6 +1,10 @@
 import React from "react";
+  import {useDispatch} from "react-redux";
+import {actionSetColor} from "../../store/productReducer";
 
-export const FilterColor = ({ toggleHandler }) => {
+export const FilterColor = () => {
+
+  const dispatch = useDispatch()
 
 
   return (<div className="color filter">
@@ -8,20 +12,20 @@ export const FilterColor = ({ toggleHandler }) => {
 
     <div className="filter--color">
 
-      <input id="white" onClick={(e) => toggleHandler(e.currentTarget)} className="hidden" value="white" type="checkbox"></input>
-      <label htmlFor="white" className="checkbox-label white"></label>
+      <input id="white" onClick={ () => dispatch(actionSetColor('белый','color'))} className="hidden" type="checkbox"/>
+      <label htmlFor="white" className="checkbox-label white"/>
 
-      <input id="yellow" onClick={(e) => toggleHandler(e.currentTarget)} className="hidden" value="yellow" type="checkbox"></input>
-      <label htmlFor="yellow" className="checkbox-label yellow"></label>
+      <input id="yellow" onClick={ () => dispatch(actionSetColor('желтый','color'))} className="hidden" type="checkbox"/>
+      <label htmlFor="yellow" className="checkbox-label yellow"/>
 
-      <input id="red" onClick={(e) => toggleHandler(e.currentTarget)} className="hidden" value="red" type="checkbox"  ></input>
-      <label htmlFor="red" className="checkbox-label red"></label>
+      <input id="red" onClick={ () => dispatch(actionSetColor('красный','color'))} className="hidden" type="checkbox"/>
+      <label htmlFor="red" className="checkbox-label red"/>
 
-      <input id="blue" onClick={(e) => toggleHandler(e.currentTarget)} className="hidden" value="blue" type="checkbox" ></input>
-      <label htmlFor="blue" className="checkbox-label blue"></label>
+      <input id="blue" onClick={ () => dispatch(actionSetColor('синий','color'))} className="hidden"  type="checkbox"/>
+      <label htmlFor="blue" className="checkbox-label blue"/>
 
-      <input id="green" onClick={(e) => toggleHandler(e.currentTarget)} className="hidden" value="green" type="checkbox" ></input>
-      <label htmlFor="green" className="checkbox-label green"></label>
+      <input id="green" onClick={ () => dispatch(actionSetColor('зелёный','color'))} className="hidden" type="checkbox"/>
+      <label htmlFor="green" className="checkbox-label green"/>
     </div></div>
 
   )

@@ -1,43 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
 import Nouislider from "nouislider-react";
 import "./nouislider.css";
+import {useDispatch} from "react-redux";
+import {actionSetYears} from "../../store/productReducer";
 
-export class SliderYears extends React.Component {
-  state = {
+export  const SliderYears = () =>  {
+  const dispatch = useDispatch()
+  const [years , serYears] = useState({
     startYear: 1940,
     endYear: 2021,
-  }
-  onUpdate = (render, handle, value) => { 
-    this.setState({
-      startYear: Math.floor(value[0]),
-      endYear: Math.floor(value[1])
+  })
+
+  const handler = (render, handle, value) => {
+    let startYear = Math.floor(value[0])
+    let endYear =  Math.floor(value[1])
+    serYears({
+      startYear,
+      endYear
     })
-
-
-    this.props.scrollHandler(value, 'years')
+    dispatch(actionSetYears(startYear, endYear))
   }
 
-  render() {
     return (
       <div className="slider">
         <h4 className="filter-title">Год приобретения</h4>
         <Nouislider
           connect
           margin={10}
-          step={1}
-          start={[this.state.startYear, this.state.endYear]}
+          step={5}
+          start={[years.startYear, years.endYear]}
           range={{
             min: 1940,
             max: 2021
           }}
-          onSlide={this.onUpdate}
+          onUpdate={handler}
         />
 
         <div className="value-wrapper">
-          <label className="min-value">{this.state.startYear}</label>
-          <label className="max-value">{this.state.endYear}</label>
+          <label className="min-value">{years.startYear}</label>
+          <label className="max-value">{years.endYear}</label>
         </div>
       </div>
     );
   }
-}

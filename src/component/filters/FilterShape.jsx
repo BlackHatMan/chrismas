@@ -1,68 +1,106 @@
-import React from "react";
+import React, {useState} from "react";
 
-import ball_1 from "../../assets/svg/ball.svg";
-import ball_2 from "../../assets/svg/bell.svg";
-import ball_3 from "../../assets/svg/cone.svg";
-import ball_4 from "../../assets/svg/snowflake.svg";
-import ball_5 from "../../assets/svg/toy.svg";
+import circle from "../../assets/svg/ball.svg";
+import bell from "../../assets/svg/bell.svg";
+import cone from "../../assets/svg/cone.svg";
+import snow from "../../assets/svg/snowflake.svg";
+import toy from "../../assets/svg/toy.svg";
+import {useDispatch} from "react-redux";
+import {actionSetShape, actionSetSize} from "../../store/productReducer";
 
 
-export const FilterShape = ({ toggleHandler }) => {
+export const FilterShape = () => {
 
+  const clName = 'filter-btn active ';
+  const dispatch = useDispatch()
 
+  const [active, setActive] = useState({
+    isBall: false,
+    isBell: false,
+    isCone: false,
+    isSnow: false,
+    isToy: false,
+    isBig: false,
+    isMedium: false,
+    isSmall: false
+  })
 
   return (<div className="shape filter">
-    <h4 className="filter-title">Форма</h4>
-    <div className="filter--shape" >
-      <div className="shape--item">
-        <button className="filter-btn" onClick={(e) => toggleHandler(e.currentTarget)} value="шар">
-          <img className="filter-img" src={ball_1} alt=""></img>
-        </button>
-        <p className="shape-text">Шар</p>
+      <h4 className="filter-title">Форма</h4>
+      <div className="filter--shape">
+        <div className="shape--item">
+          <button className={active.isBall ? clName : 'filter-btn'} onClick={() => {
+            dispatch(actionSetShape('шар', 'shape'))
+            setActive({...active, isBall: !active.isBall})
+          }}  >
+            <img className="filter-img" src={circle} alt=""/>
+          </button>
+          <p className="shape-text">Шар</p>
+        </div>
+
+        <div className="shape--item">
+          <button className={active.isBell ? clName : 'filter-btn'} onClick={() => {
+            dispatch(actionSetShape('колокольчик', 'shape'))
+            setActive({...active, isBell: !active.isBell})
+          }}  >
+            <img className="filter-img" src={bell} alt=""/>
+          </button>
+          <p className="shape-text">Колокольчик</p>
+
+        </div>
+        <div className="shape--item">
+          <button className={active.isCone ? clName : 'filter-btn'} onClick={() => {
+            dispatch(actionSetShape('шишка', 'shape'))
+            setActive({...active, isCone: !active.isCone})
+          }}>
+            <img className="filter-img" src={cone} alt=""/>
+          </button>
+          <p className="shape-text">Шишка</p>
+
+        </div>
+        <div className="shape--item">
+          <button className={active.isSnow ? clName : 'filter-btn'} onClick={() => {
+            dispatch(actionSetShape('снежинка', 'shape'))
+            setActive({...active, isSnow: !active.isSnow})
+          }}  >
+            <img className="filter-img" src={snow} alt=""/>
+          </button>
+          <p className="shape-text">Снежинка</p>
+
+        </div>
+        <div className="shape--item">
+          <button className={active.isToy ? clName : 'filter-btn'} onClick={() => {
+            dispatch(actionSetShape('фигурка', 'shape'))
+            setActive({...active, isToy: !active.isToy})
+          }}  >
+            <img className="filter-img" src={toy} alt=""/>
+          </button>
+          <p className="shape-text">Фигурка</p>
+
+        </div>
       </div>
 
-      <div className="shape--item">
-        <button className="filter-btn" onClick={(e) => toggleHandler(e.currentTarget)} value="колокольчик">
-          <img className="filter-img" src={ball_2} alt=""></img>
-        </button>
-        <p className="shape-text">Колокольчик</p>
+      <h4 className="filter-title">Размер</h4>
+      <div className="filter--size">
+        <input id="big" className="size-checkbox" checked={active.isBig}  onClick={() => {
+          dispatch(actionSetSize('большой', 'size'))
+          setActive({...active, isBig: !active.isBig})
+        }} type="checkbox" />
+        <label className="size-label" htmlFor="big">Большой</label>
 
-      </div>
-      <div className="shape--item">
-        <button className="filter-btn" onClick={(e) => toggleHandler(e.currentTarget)} value="шишка">
-          <img className="filter-img" src={ball_3} alt=""></img>
-        </button>
-        <p className="shape-text">Шишка</p>
+        <input id="medium" className="size-checkbox" checked={active.isMedium}  onClick={() => {
+          dispatch(actionSetSize('средний', 'size'))
+          setActive({...active, isMedium: !active.isMedium})
+        }} type="checkbox"/>
+        <label className="size-label" htmlFor="medium">Средний</label>
 
-      </div>
-      <div className="shape--item">
-        <button className="filter-btn" onClick={(e) => toggleHandler(e.currentTarget)} value="снежинка">
-          <img className="filter-img" src={ball_4} alt=""></img>
-        </button>
-        <p className="shape-text">Снежинка</p>
-
-      </div>
-      <div className="shape--item">
-        <button className="filter-btn" onClick={(e) => toggleHandler(e.currentTarget)} value="фигурка">
-          <img className="filter-img" src={ball_5} alt=""></img>
-        </button>
-        <p className="shape-text">Фигурка</p>
+        <input id="little" className="size-checkbox" checked={active.isSmall}  onClick={() => {
+          dispatch(actionSetSize('малый', 'size'))
+          setActive({...active, isSmall: !active.isSmall})
+        }} type="checkbox"/>
+        <label className="size-label" htmlFor="little">Малый</label>
 
       </div>
     </div>
-
-    <h4 className="filter-title">Размер</h4>
-    <div className="filter--size">
-      <input id="big" className="size-checkbox" onClick={(e) => toggleHandler(e.currentTarget)} type="checkbox" value="большой" />
-      <label className="size-label" htmlFor="big">Большой</label>
-
-      <input id="medium" className="size-checkbox" onClick={(e) => toggleHandler(e.currentTarget)} type="checkbox" value="средний" />
-      <label className="size-label" htmlFor="medium">Средний</label>
-
-      <input id="little" className="size-checkbox" onClick={(e) => toggleHandler(e.currentTarget)} type="checkbox" value="малый" />
-      <label className="size-label" htmlFor="little">Малый</label>
-
-    </div>
-  </div>
   )
 }

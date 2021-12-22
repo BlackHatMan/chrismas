@@ -3,9 +3,9 @@ import React from "react";
 export const Footer = () => {
 
 
-  return <footer class="footer">
+  return <footer className="footer">
 
-    <div class="logo">
+    <div className="logo">
     </div>
     <a href="https://rs.school/" target="blank">The Rolling Scopes School</a>
     <a href="https://github.com/blackhatman" target="blank">BlackHatMan</a>
