@@ -10,8 +10,7 @@ import {actionSetShape, actionSetSize} from "../../store/productReducer";
 
 
 export const FilterShape = () => {
-
-  const clName = 'filter-btn active ';
+ 
   const dispatch = useDispatch()
 
   const [active, setActive] = useState({
@@ -29,7 +28,7 @@ export const FilterShape = () => {
       <h4 className="filter-title">Форма</h4>
       <div className="filter--shape">
         <div className="shape--item">
-          <button className={active.isBall ? clName : 'filter-btn'} onClick={() => {
+          <button className={active.isBall ? 'filter-btn active' : 'filter-btn'} onClick={() => {
             dispatch(actionSetShape('шар', 'shape'))
             setActive({...active, isBall: !active.isBall})
           }}  >
@@ -39,7 +38,7 @@ export const FilterShape = () => {
         </div>
 
         <div className="shape--item">
-          <button className={active.isBell ? clName : 'filter-btn'} onClick={() => {
+          <button className={active.isBell ? 'filter-btn active' : 'filter-btn'} onClick={() => {
             dispatch(actionSetShape('колокольчик', 'shape'))
             setActive({...active, isBell: !active.isBell})
           }}  >
@@ -49,7 +48,7 @@ export const FilterShape = () => {
 
         </div>
         <div className="shape--item">
-          <button className={active.isCone ? clName : 'filter-btn'} onClick={() => {
+          <button className={active.isCone ? 'filter-btn active' : 'filter-btn'} onClick={() => {
             dispatch(actionSetShape('шишка', 'shape'))
             setActive({...active, isCone: !active.isCone})
           }}>
@@ -59,7 +58,7 @@ export const FilterShape = () => {
 
         </div>
         <div className="shape--item">
-          <button className={active.isSnow ? clName : 'filter-btn'} onClick={() => {
+          <button className={active.isSnow ? 'filter-btn active' : 'filter-btn'} onClick={() => {
             dispatch(actionSetShape('снежинка', 'shape'))
             setActive({...active, isSnow: !active.isSnow})
           }}  >
@@ -69,7 +68,7 @@ export const FilterShape = () => {
 
         </div>
         <div className="shape--item">
-          <button className={active.isToy ? clName : 'filter-btn'} onClick={() => {
+          <button className={active.isToy ? 'filter-btn active' : 'filter-btn'} onClick={() => {
             dispatch(actionSetShape('фигурка', 'shape'))
             setActive({...active, isToy: !active.isToy})
           }}  >
@@ -82,19 +81,19 @@ export const FilterShape = () => {
 
       <h4 className="filter-title">Размер</h4>
       <div className="filter--size">
-        <input id="big" className="size-checkbox" checked={active.isBig}  onClick={() => {
+        <input id="big" className="size-checkbox" defaultChecked={active.isBig}  onClick={() => {
           dispatch(actionSetSize('большой', 'size'))
           setActive({...active, isBig: !active.isBig})
         }} type="checkbox" />
         <label className="size-label" htmlFor="big">Большой</label>
 
-        <input id="medium" className="size-checkbox" checked={active.isMedium}  onClick={() => {
+        <input id="medium" className="size-checkbox" defaultChecked={active.isMedium}  onClick={() => {
           dispatch(actionSetSize('средний', 'size'))
           setActive({...active, isMedium: !active.isMedium})
         }} type="checkbox"/>
         <label className="size-label" htmlFor="medium">Средний</label>
 
-        <input id="little" className="size-checkbox" checked={active.isSmall}  onClick={() => {
+        <input id="little" className="size-checkbox" defaultChecked={active.isSmall}  onClick={() => {
           dispatch(actionSetSize('малый', 'size'))
           setActive({...active, isSmall: !active.isSmall})
         }} type="checkbox"/>

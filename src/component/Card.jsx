@@ -1,8 +1,17 @@
-import React from "react";
+import React from "react";/* 
+import { useDispatch } from "react-redux"; */
+import { actionSetFavorite } from "../store/favoriteReducer";
 
-export const Card = (props) => { 
+export const Card = (props, favoriteState, dispatch) => {
+
+  const id = Number.parseInt(props.num)
+  const favorite = favoriteState.favorite.includes(id)
+
   return (
-    <div className="card" key={props.num}>
+    <div className={favorite ? "card selected" : "card"} onClick={() => {
+      dispatch(actionSetFavorite(id))
+
+    }} key={id}>
       <h3 className="card-title"> {props.name} </h3>
       <img className="card-img" src={`./image/toys/${props.num}.png`} alt="" />
       <ul className="card--description">
@@ -13,7 +22,7 @@ export const Card = (props) => {
         <li className="description-item">Размер: {props.size}  </li>
         <li className="description-item">Любимая: {props.favorite ? "да" : "нет"} </li>
       </ul>
-      <div className="card-ribbon"/>
+      <div className="card-ribbon" />
     </div>
   )
 }

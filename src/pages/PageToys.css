@@ -1,10 +1,14 @@
+:root{
+  --color-card-br: #24c5db; 
+}
+
 .page-toys {
   margin: 0 auto;
   max-width: 1650px;
   display: flex;
   color: white;
   justify-content: space-around;
-  min-height: calc(100vh - 70px)
+  min-height: calc(100vh - 70px) 
 }
 .blur {
   background: rgba(22, 41, 41, 0.5);
@@ -52,7 +56,7 @@
   background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
 }
 .select-item {
-  background: #278d9f;
+  background: #24c5db;
 }
 .card-container {
   max-width: 1200px;
@@ -65,11 +69,15 @@
   flex-wrap: wrap;
   max-width: 280px;
   border-radius: 10px;
-  border: 1px solid #278d9f;
+  border: 1px solid #24c5db;
   background-color: rgba(31, 112, 127, 0.3);
   position: relative;
+  cursor: pointer;
 }
-
+.selected {
+  border: 1px solid red;
+  --color-card-br: red;
+}
 .card-img {
   width: 90px;
   height: 110px;
@@ -95,7 +103,7 @@
   cursor: pointer;
   width: 70px;
   height: 30px;
-  background-color: #24c5db;
+  background-color: var(--color-card-br);
   position: absolute;
   bottom: 20px;
   left: -8px;
@@ -112,16 +120,13 @@
   content: "";
   right: -15px;
   position: absolute;
-  border-left: 15px solid #24c5db;
+  border-left: 15px solid var(--color-card-br);
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
 }
 .card-ribbon:hover {
-  background-color: red;
-}
-.card-ribbon:hover::after {
-  border-left: 15px solid red;
-}
+  opacity: 0.8;
+} 
 .shape--item {
   margin-right: 25px;
 }

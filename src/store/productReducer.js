@@ -1,18 +1,4 @@
-const initialState = {
-  products: [],
-  shape: [],
-  size: [],
-  color: [],
-  year: {
-    startYear: 1940,
-    endYear: 2021
-  },
-  count: {
-    min: 1,
-    max: 20
-  }
-
-}
+import { initialState } from "./initialState"
 
 //export const actionStart = (payload) => ({type: "SET_PRODUCTS", payload})
 export const actionSetShape = (filter, filterType) => ({type: "SET_FILTER_SHAPE", filter, filterType})
@@ -20,6 +6,7 @@ export const actionSetSize = (filter, filterType) => ({type: "SET_FILTER_SIZE", 
 export const actionSetColor = (filter, filterType) => ({type: "SET_FILTER_COLOR", filter, filterType})
 export const actionSetYears = (start, end) => ({type: "SET_FILTER_YEARS", start, end})
 export const actionSetCount = (min, max) => ({type: "SET_FILTER_COUNT", min, max})
+export const actionSetName = (str) => ({type: "SET_FILTER_NAME", str})
 
 export const productReducer = (state = initialState, action) => {
 
@@ -79,6 +66,10 @@ export const productReducer = (state = initialState, action) => {
           min: action.min,
           max: action.max
         }
+      }
+    } case 'SET_FILTER_NAME' : {
+      return {
+        ...state, str: action.str
       }
     }
 
