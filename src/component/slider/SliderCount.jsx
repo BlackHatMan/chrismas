@@ -1,11 +1,9 @@
 import React, {useState} from "react";
 import Nouislider from "nouislider-react";
-import "./nouislider.css";
-import {useDispatch} from "react-redux";
+import "./nouislider.css"; 
 import {actionSetCount} from "../../store/productReducer";
 
-export  const SliderCount = () =>  {
-  const dispatch = useDispatch()
+export  const SliderCount = ({dispatch}) =>  { 
   const [count , setCount] = useState({
     min: 1,
     max: 20,

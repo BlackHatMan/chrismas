@@ -22,11 +22,11 @@ export const PageToys = () => {
     <div className="blur">
       <div className="page page-toys">
         <div className="controls">
-          <FilterGlobal />
+          <FilterGlobal dispatch={dispatch} />
           <FilterSort />
-          <FilterShape />
-          <FilterRange />
-          <FilterColor />
+          <FilterShape dispatch={dispatch}/>
+          <FilterRange  dispatch={dispatch}/>
+          <FilterColor dispatch={dispatch} />
           <FilterReset />
         </div>
         <div className="wrapper">

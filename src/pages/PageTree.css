@@ -1,0 +1,56 @@
+.tree--page-container {
+  color: white;
+  display: flex;
+}
+.tree--choice-left {
+  max-width: 380px;
+}
+.tree--choice-right {
+  max-width: 440px;
+  width: 100%;
+}
+.choice--tree {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tree-item {
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tree-item-img {
+  object-fit: contain;
+}
+.choice--background {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.background-item-img {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tree--main {
+  width: 100%;
+  max-width: 1000px;
+  height: calc(100vh - 140px);
+}
+.choice--toys {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ padding: 15px;
+ 
+}
+.toys-item {
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.5); 
+}

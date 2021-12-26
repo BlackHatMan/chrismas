@@ -1,11 +1,9 @@
 import React, {useState} from "react";
 import Nouislider from "nouislider-react";
-import "./nouislider.css";
-import {useDispatch} from "react-redux";
+import "./nouislider.css"; 
 import {actionSetYears} from "../../store/productReducer";
 
-export  const SliderYears = () =>  {
-  const dispatch = useDispatch()
+export  const SliderYears = ({dispatch}) =>  { 
   const [years , serYears] = useState({
     startYear: 1940,
     endYear: 2021,

@@ -4,14 +4,12 @@ import circle from "../../assets/svg/ball.svg";
 import bell from "../../assets/svg/bell.svg";
 import cone from "../../assets/svg/cone.svg";
 import snow from "../../assets/svg/snowflake.svg";
-import toy from "../../assets/svg/toy.svg";
-import {useDispatch} from "react-redux";
+import toy from "../../assets/svg/toy.svg"; 
 import {actionSetShape, actionSetSize} from "../../store/productReducer";
 
 
-export const FilterShape = () => {
- 
-  const dispatch = useDispatch()
+export const FilterShape = ({dispatch}) => {
+  
 
   const [active, setActive] = useState({
     isBall: false,

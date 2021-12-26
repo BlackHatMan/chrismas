@@ -1,11 +1,24 @@
 
-import {combineReducers, createStore} from "redux";
-import {productReducer} from "./productReducer";
+import { combineReducers, createStore } from "redux";
+import { productReducer } from "./productReducer";
 import { favoriteReducer } from "./favoriteReducer";
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-const combine = combineReducers({
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+
+const rootReducer = combineReducers({
     productReducer,
     favoriteReducer
 })
 
-export const store = createStore(combine)
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+const store = createStore(persistedReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+export const persistor = persistStore(store)
+
+export default store
+

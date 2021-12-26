@@ -1,5 +1,4 @@
-import React from "react";/* 
-import { useDispatch } from "react-redux"; */
+import React from "react"; 
 import { actionSetFavorite } from "../store/favoriteReducer";
 
 export const Card = (props, favoriteState, dispatch) => {
@@ -13,7 +12,7 @@ export const Card = (props, favoriteState, dispatch) => {
 
     }} key={id}>
       <h3 className="card-title"> {props.name} </h3>
-      <img className="card-img" src={`./image/toys/${props.num}.png`} alt="" />
+      <img className="card-img" src={`./image/toys/${props.num}.png`} alt="" loading="lazy" />
       <ul className="card--description">
         <li className="description-item"> Количество: {props.count} </li>
         <li className="description-item">Год покупки: {props.year}</li>

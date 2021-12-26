@@ -1,12 +1,10 @@
 import React from "react";
 import snow from "../../assets/svg/snow.svg"
-import volume from "../../assets/svg/audio.svg"
-import {useDispatch} from "react-redux";
+import volume from "../../assets/svg/audio.svg" 
 import {actionSetName} from "../../store/productReducer"
 
 
-export const FilterGlobal = () => {
-  const dispatch = useDispatch() 
+export const FilterGlobal = ({dispatch}) => { 
 
   return (
     <div className="global filter">
@@ -18,7 +16,7 @@ export const FilterGlobal = () => {
       </button>
       <input className="global-search" 
       onChange={(e) => dispatch(actionSetName(e.target.value.toLowerCase())) } 
-      type="text" placeholder="   Поиск" autoFocus={true} />
+      type="text" placeholder="   Поиск" autoFocus={true}  autoComplete="off"/>
 
 
     </div>

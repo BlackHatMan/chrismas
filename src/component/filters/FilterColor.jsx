@@ -1,10 +1,7 @@
-import React from "react";
-  import {useDispatch} from "react-redux";
+import React from "react"; 
 import {actionSetColor} from "../../store/productReducer";
 
-export const FilterColor = () => {
-
-  const dispatch = useDispatch()
+export const FilterColor = ({dispatch}) => { 
 
 
   return (<div className="color filter">

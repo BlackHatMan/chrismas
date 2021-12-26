@@ -249,15 +249,20 @@
   justify-content: space-between;
 }
 .global-search {
-  font-family: inherit;
-  color: #fff;
-  font-size: 16px;
+  font-family: inherit; 
   width: 250px;
   height: 35px;
   padding: 3px 10px;
-  border-color: #24c5db26;
-  border-radius: 30px;
-  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+  border: 1px solid #278D9F;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px; 
+  background-color: rgba(31, 112, 127, .3);
+  background-image: url("./../assets/svg/search.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 230px center;
+  backdrop-filter: blur(6px); 
 }
 .global-search:focus {
   outline: none;

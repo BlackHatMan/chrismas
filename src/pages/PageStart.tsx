@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 export const PageStart = () => {
 
@@ -8,8 +9,8 @@ export const PageStart = () => {
         Новогодняя игра
         <span>"Наряди елку"</span>
       </h1>
-
-      <button className="start--page-btn"></button>
+  
+      <Link to={"toys"}><button className="start--page-btn">Начать игру</button> </Link>
     </div>
   )
 }
