@@ -27,7 +27,7 @@ export const PageToys = () => {
           <FilterShape dispatch={dispatch}/>
           <FilterRange  dispatch={dispatch}/>
           <FilterColor dispatch={dispatch} />
-          <FilterReset />
+          <FilterReset dispatch={dispatch} />
         </div>
         <div className="wrapper">
           <h2 className="toys-title"> ИГРУШКИ </h2>

@@ -6,7 +6,7 @@
   max-width: 380px;
 }
 .tree--choice-right {
-  max-width: 440px;
+  max-width: 380px;
   width: 100%;
 }
 .choice--tree {
@@ -37,20 +37,129 @@
 }
 
 .tree--main {
+  position: relative;
   width: 100%;
-  max-width: 1000px;
-  height: calc(100vh - 140px);
+  max-width: 760px;/* 
+  height: calc(100vh - 140px); */
+  background: center / cover no-repeat;
 }
 .choice--toys {
- display: flex;
- flex-wrap: wrap;
- gap: 10px;
- padding: 15px;
- 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
 }
 .toys-item {
+  cursor: move;
   border-radius: 10px;
   width: 80px;
   height: 80px;
-  background-color: rgba(255, 255, 255, 0.5); 
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.ice-volume-control {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.subtitle-tree {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+.tree-area {
+  position: absolute;
+  left: 20%;
+  top: 5%;
+}
+.garland-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 110px;
+}
+.garland-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  padding: 10px;
+}
+.onoffswitch {
+  position: relative;
+  width: 85px;
+}
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #999999;
+  border-radius: 20px;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+.onoffswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-switch {
+  width: 26px;
+  margin: 2px;
+  background: #ffffff;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 55px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before {
+  content: "Вкл";
+  padding-left: 12px;
+  background-color: #237e8f;
+  color: #ffffff;
+}
+.onoffswitch-inner:after {
+  content: "Выкл";
+  padding-right: 10px;
+  background-color: #eeeeee;
+  color: #666;
+  text-align: right;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.decorate--tree {
+  display: flex;
+  overflow: auto;
+  margin: 0px 10px;
+  gap: 10px;
+  padding: 5px;
 }
