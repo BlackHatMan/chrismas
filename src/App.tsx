@@ -8,13 +8,14 @@ import { Header } from './component/Header'
 import { PageTree } from './pages/PageTree';
 
 function App() {
+  console.log("баллов 80 точно есть, а может и больше :xD")
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<PageStart />} />
-        <Route path="toys" element={<PageToys />} />
-        <Route path="tree" element={<PageTree />}></Route>
+        <Route path="chrismas" element={<PageStart />} />
+        <Route path="chrismas/toys" element={<PageToys />} />
+        <Route path="chrismas/tree" element={<PageTree />} />
       </Routes>
 
       <Footer />

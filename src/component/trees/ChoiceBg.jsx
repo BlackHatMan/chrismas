@@ -9,7 +9,7 @@ const ChoiceBg = ({setBackId}) => {
     <p className="subtitle-tree">Выберите фон</p>    <div className="choice--background">
       {path.map(el =>
         <div className="background-item" onClick={() => setBackId(el)} key={el}>
-          <img className="background-item-img" src={`image/bg/${el}.jpg`} alt="" width={82} height={82} />
+          <img className="background-item-img" src={`./image/bg/${el}.jpg`} alt="" width={82} height={82} />
         </div>
       )}
 

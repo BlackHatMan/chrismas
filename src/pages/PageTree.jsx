@@ -15,19 +15,19 @@ export const PageTree = () => {
   const favoriteId = useSelector(state => state.favoriteReducer.favorite)
 
   const [backId, setBackId] = useState(1)
-  console.log("🚀 ~ file: PageTree.jsx ~ line 17 ~ PageTree ~ backId", backId)
+  const [treeId, serTreeId] = useState(1)
 
   return (
     <div className="tree--page-container">
       <div className="tree--choice-left">
 
         <Volume />
-        <ChoiceTree />
+        <ChoiceTree serTreeId={serTreeId}/>
         <ChoiceBg setBackId={setBackId} />
         <ChoiceGarland />
       </div>
 
-      <TreeMain backId={backId} />
+      <TreeMain backId={backId} treeId={treeId}/>
 
       <div className="tree--choice-right">
         <TreeToys favoriteId={favoriteId} />

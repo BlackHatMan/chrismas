@@ -10,7 +10,7 @@ const TreeToys = ({ favoriteId }) => {
     <div className="choice--toys">
       {favorite.map(el =>
         <div className="toys-item" key={el}>
-          <img src={`./image/toys/${el + 1}.png`} alt="" width={60} height={60} />
+          <img src={`./image/toys/${el}.png`} alt="" width={60} height={60} />
 
         </div>
       )}

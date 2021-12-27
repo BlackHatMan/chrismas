@@ -10,7 +10,7 @@ export const PageStart = () => {
         <span>"Наряди елку"</span>
       </h1>
   
-      <Link to={"toys"}><button className="start--page-btn">Начать игру</button> </Link>
+      <Link to={"toys"}><button className="start--page-btn">Начать игру</button></Link>
     </div>
   )
 }
