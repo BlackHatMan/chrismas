@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/chrismas/static/css/main.922c878d.chunk.css",
-    "main.js": "/chrismas/static/js/main.50d0f247.chunk.js",
-    "main.js.map": "/chrismas/static/js/main.50d0f247.chunk.js.map",
+    "main.css": "/chrismas/static/css/main.fe2189e8.chunk.css",
+    "main.js": "/chrismas/static/js/main.2f13b078.chunk.js",
+    "main.js.map": "/chrismas/static/js/main.2f13b078.chunk.js.map",
     "runtime-main.js": "/chrismas/static/js/runtime-main.5d2bc95c.js",
     "runtime-main.js.map": "/chrismas/static/js/runtime-main.5d2bc95c.js.map",
-    "static/js/2.3c1cd550.chunk.js": "/chrismas/static/js/2.3c1cd550.chunk.js",
-    "static/js/2.3c1cd550.chunk.js.map": "/chrismas/static/js/2.3c1cd550.chunk.js.map",
+    "static/js/2.8587e97d.chunk.js": "/chrismas/static/js/2.8587e97d.chunk.js",
+    "static/js/2.8587e97d.chunk.js.map": "/chrismas/static/js/2.8587e97d.chunk.js.map",
     "index.html": "/chrismas/index.html",
-    "static/css/main.922c878d.chunk.css.map": "/chrismas/static/css/main.922c878d.chunk.css.map",
-    "static/js/2.3c1cd550.chunk.js.LICENSE.txt": "/chrismas/static/js/2.3c1cd550.chunk.js.LICENSE.txt",
+    "static/css/main.fe2189e8.chunk.css.map": "/chrismas/static/css/main.fe2189e8.chunk.css.map",
+    "static/js/2.8587e97d.chunk.js.LICENSE.txt": "/chrismas/static/js/2.8587e97d.chunk.js.LICENSE.txt",
     "static/media/1.2edf659a.jpg": "/chrismas/static/media/1.2edf659a.jpg",
     "static/media/2.4a633ed0.jpg": "/chrismas/static/media/2.4a633ed0.jpg",
     "static/media/3.a7579227.jpg": "/chrismas/static/media/3.a7579227.jpg",
@@ -31,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.5d2bc95c.js",
-    "static/js/2.3c1cd550.chunk.js",
-    "static/css/main.922c878d.chunk.css",
-    "static/js/main.50d0f247.chunk.js"
+    "static/js/2.8587e97d.chunk.js",
+    "static/css/main.fe2189e8.chunk.css",
+    "static/js/main.2f13b078.chunk.js"
   ]
 }
