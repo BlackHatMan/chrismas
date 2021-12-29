@@ -1,16 +1,15 @@
-import React from "react"; 
+import React from "react";
 import { actionSetFavorite } from "../store/favoriteReducer";
 
 export const Card = (props, favoriteState, dispatch) => {
 
-  const id = Number.parseInt(props.num)
-  const favorite = favoriteState.favorite.includes(id)
+  const favorite = favoriteState.items.some(el => el.num === props.num)
 
   return (
     <div className={favorite ? "card selected" : "card"} onClick={() => {
-      dispatch(actionSetFavorite(id))
+      dispatch(actionSetFavorite(props))
 
-    }} key={id}>
+    }} key={props.num}>
       <h3 className="card-title"> {props.name} </h3>
       <img className="card-img" src={`./image/toys/${props.num}.png`} alt="" loading="lazy" />
       <ul className="card--description">

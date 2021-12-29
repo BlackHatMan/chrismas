@@ -12,7 +12,7 @@ const Header = () => {
         <Link to={"chrismas/tree"} className="switch-favorites-page">Ёлка</Link>
       </nav>
       <div className="header-controls"> 
-        <div className="select"><span>{favorite.favorite.length}</span></div>
+        <div className="select"><span>{favorite.items.length}</span></div>
       </div>      
     </div>
   )

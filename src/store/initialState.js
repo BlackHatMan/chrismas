@@ -16,5 +16,5 @@ export const initialState = {
 }
 export const initialFavorite = {
   favorite: [],
-  item: []
+  items: []
 }

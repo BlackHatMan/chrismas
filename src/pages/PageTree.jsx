@@ -12,7 +12,7 @@ import { DecorateTree } from "../component/trees/DecorateTree";
 
 export const PageTree = () => {
 
-  const favoriteId = useSelector(state => state.favoriteReducer.favorite)
+  const favoriteItems = useSelector(state => state.favoriteReducer.items)
 
   const [backId, setBackId] = useState(1)
   const [treeId, serTreeId] = useState(1)
@@ -22,15 +22,15 @@ export const PageTree = () => {
       <div className="tree--choice-left">
 
         <Volume />
-        <ChoiceTree serTreeId={serTreeId}/>
+        <ChoiceTree serTreeId={serTreeId} />
         <ChoiceBg setBackId={setBackId} />
         <ChoiceGarland />
       </div>
 
-      <TreeMain backId={backId} treeId={treeId}/>
+      <TreeMain backId={backId} treeId={treeId} />
 
       <div className="tree--choice-right">
-        <TreeToys favoriteId={favoriteId} />
+        <TreeToys favoriteItems={favoriteItems} />
 
         <DecorateTree />
       </div>

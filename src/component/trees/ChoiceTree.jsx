@@ -1,8 +1,8 @@
 import React from "react";
 
-const ChoiceTree = ({serTreeId}) => {
+const ChoiceTree = ({ serTreeId }) => {
 
-  const path = [1, 2, 3, 4, 5, 6]; 
+  const path = [1, 2, 3, 4, 5, 6];
 
   return (<>
     <p className="subtitle-tree">Выберите Ёлку</p>

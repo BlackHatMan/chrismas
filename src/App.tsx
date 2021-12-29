@@ -8,7 +8,7 @@ import { Header } from './component/Header'
 import { PageTree } from './pages/PageTree';
 
 function App() {
-  console.log("баллов 80 точно есть, а может и больше :xD")
+  console.log("баллов 100 точно есть, а может и больше :xD")
   return (
     <div className="App">
       <Header />
